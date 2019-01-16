@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './Navbar';
-import Navigation from './Navigation';
 import Jumbotron from './Jumbotron';
 
 class App extends Component {
