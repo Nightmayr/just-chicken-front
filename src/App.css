@@ -61,9 +61,10 @@ body{
 }
 
 .card{
-  width: 18rem;
+  /* width: 18rem; */
   margin-right: 10px;
   margin-bottom: 10px;
+  
 }
 
 #jumboContainer{
@@ -72,7 +73,7 @@ body{
 
 .list-of-cards {
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   flex-wrap: wrap;
 }
 
