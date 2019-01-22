@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Jumbotron extends Component{
     render() {
         return (
-            <div class="container">
+            <div class="container" id="jumboContainer">
                 <div class="jumbotron">
                     <h1 class="display-4">Welcome to Just-Chicken</h1>
                     <p class="lead">View our curated list of fried chicken restaurants.</p>
