@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
 import Navbar from './Navbar';
 import Jumbotron from './Jumbotron';
@@ -12,7 +12,7 @@ class App extends Component {
           {/* <Navigation/> */}
           <Navbar />
           {/* replace with custom logo */}
-          {/* <img src={logo} className="App-logo" alt="logo" />  */}
+          <img src={logo} className="App-logo" alt="logo" /> 
         </header>
         <Jumbotron />
       </div>
