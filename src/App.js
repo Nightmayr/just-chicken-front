@@ -13,10 +13,12 @@ class App extends Component {
           {/* <Navigation/> */}
           <Navbar />
           {/* replace with custom logo */}
-          <img src={logo} className="App-logo" alt="logo" /> 
+          {/* <img src={logo} className="App-logo" alt="logo" />  */}
         </header>
+        <div class="container">
         <Jumbotron />
-        <RestaurantCard/>
+          <RestaurantCard />
+          </div>
       </div>
     );
   }
