@@ -3,6 +3,7 @@ import logo from './logo.png';
 import './App.css';
 import Navbar from './Navbar';
 import Jumbotron from './Jumbotron';
+import RestaurantCard from './RestaurantCard';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" /> 
         </header>
         <Jumbotron />
+        <RestaurantCard/>
       </div>
     );
   }
