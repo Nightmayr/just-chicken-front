@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
-// import logo from './logo.jpg';
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+} from 'react-router-dom';
+
+import logo from './logo.png';
+import Restaurant from './Restaurant';
 
 
 class Navbar extends Component {
     render(){
-        return(
+        return (
+            <Router>
+
             <div>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <img src ={require("./logo.png")} width = "100" height = "70" alt = "" class = "d-inline-block align-top" />
@@ -18,9 +27,9 @@ class Navbar extends Component {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                        <Link  class="nav-link" to="/">Restaurant <span class="sr-only">(current)</span></Link>
                     </li>
-                    <li class="nav-item dropdown">
+                    {/* <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Dropdown
                         </a>
@@ -30,19 +39,31 @@ class Navbar extends Component {
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>
                         </div>
-                            </li>
+                    </li> */}
                             
                     </ul>
                         <form class="form-inline my-2 my-lg-0">
                             < ul class = "navbar-nav mr-auto" >
                                 <li class="nav-item"><a class="nav-link" href="#">Login</a></li> 
                             </ul>
+                            < ul class = "navbar-nav mr-auto" >
+                                <li class="nav-item"><a class="nav-link" href="#">Register</a></li> 
+                            </ul>
+
                     {/* <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> */}
                     </form>
+                        </div>
+                        
+                        
+
+                    </nav>
+                    
+                    <Route exact path="/" component={Restaurant} />
+
                 </div>
-                </nav>
-            </div>
+            </Router>
+
         )
     }
 }

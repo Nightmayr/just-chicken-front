@@ -15,10 +15,6 @@ class App extends Component {
           {/* replace with custom logo */}
           {/* <img src={logo} className="App-logo" alt="logo" />  */}
         </header>
-        <div class="container">
-        <Jumbotron />
-          <RestaurantCard />
-          </div>
       </div>
     );
   }
