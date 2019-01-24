@@ -5,9 +5,10 @@ import {
     Link
 } from 'react-router-dom';
 
-import logo from './logo.png';
 import Restaurant from './Restaurant';
 import Home from './Home';
+import Register from './Register';
+import Login from './Login';
 
 
 class Navbar extends Component {
@@ -27,7 +28,7 @@ class Navbar extends Component {
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
-                                <li class="nav-item active">
+                                <li class="nav-item">
                                     <Link class="nav-link" to="/restaurant">Restaurant <span class="sr-only">(current)</span></Link>
                                 </li>
                                 {/* <li class="nav-item dropdown">
@@ -45,14 +46,18 @@ class Navbar extends Component {
                             </ul>
                             <form class="form-inline my-2 my-lg-0">
                                 < ul class="navbar-nav mr-auto" >
-                                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                                    <li class="nav-item">
+                                        <Link class="nav-link" to="/login">Login</Link>
+                                    </li>
                                 </ul>
                                 < ul class="navbar-nav mr-auto" >
-                                    <li class="nav-item"><a class="nav-link" href="#">Register</a></li>
+                                    <li class="nav-item">
+                                        <Link class="nav-link" to="/register">Register</Link>
+                                    </li>
                                 </ul>
 
                                 {/* <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> */}
+                                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> */}
                             </form>
                         </div>
 
@@ -62,6 +67,8 @@ class Navbar extends Component {
 
                     <Route exact path="/" component={Home} />
                     <Route exact path="/restaurant" component={Restaurant} />
+                    <Route exact path="/register" component={Register} />
+                    <Route exact path="/login" component={Login} />
 
 
                 </div>

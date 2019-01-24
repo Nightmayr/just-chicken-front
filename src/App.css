@@ -81,6 +81,12 @@ body{
   flex-wrap: wrap;
 }
 
+.card-img-top {
+  width: 10rem;
+  /* height: 15vw; */
+  /* object-fit: cover; */
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
