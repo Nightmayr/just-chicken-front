@@ -5,7 +5,7 @@ class RestaurantCard extends Component{
         return (
             <div class="list-of-cards">
                 <div class="card">
-                    <img src="" class="card-img-top" alt="..."/>
+                    <img src="" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title">[RESTAURANT NAME]</h5>
                         <p class="card-text">[RESTAURANT INFO]</p>
@@ -13,7 +13,7 @@ class RestaurantCard extends Component{
                     </div>
                 </div>
                 <div class="card">
-                    <img src="" class="card-img-top" alt="..."/>
+                    <img src="" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title">[RESTAURANT NAME]</h5>
                         <p class="card-text">[RESTAURANT INFO]</p>
@@ -21,7 +21,7 @@ class RestaurantCard extends Component{
                     </div>
                 </div>
                 <div class="card">
-                    <img src="" class="card-img-top" alt="..."/>
+                    <img src="" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title">[RESTAURANT NAME]</h5>
                         <p class="card-text">[RESTAURANT INFO]</p>
@@ -29,7 +29,7 @@ class RestaurantCard extends Component{
                     </div>
                 </div>
                 <div class="card">
-                    <img src="" class="card-img-top" alt="..."/>
+                    <img src="" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title">[RESTAURANT NAME]</h5>
                         <p class="card-text">[RESTAURANT INFO]</p>
@@ -37,7 +37,7 @@ class RestaurantCard extends Component{
                     </div>
                 </div>
                 <div class="card">
-                    <img src="" class="card-img-top" alt="..."/>
+                    <img src="" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title">[RESTAURANT NAME]</h5>
                         <p class="card-text">[RESTAURANT INFO]</p>
@@ -45,7 +45,7 @@ class RestaurantCard extends Component{
                     </div>
                 </div>
                 <div class="card">
-                    <img src="" class="card-img-top" alt="..."/>
+                    <img src="" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title">[RESTAURANT NAME]</h5>
                         <p class="card-text">[RESTAURANT INFO]</p>
@@ -53,7 +53,7 @@ class RestaurantCard extends Component{
                     </div>
                 </div>
             </div>
-            )
+        );
         }
         // 
 }
