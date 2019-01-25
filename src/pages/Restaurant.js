@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Jumbotron from './Jumbotron';
-import RestaurantCard from './RestaurantCard';
+import Jumbotron from '../Jumbotron';
+import RestaurantCard from '../RestaurantCard';
 
 class Restaurant extends Component{
     render() {

@@ -5,10 +5,10 @@ import {
     Link
 } from 'react-router-dom';
 
-import Restaurant from './Restaurant';
-import Home from './Home';
-import Register from './Register';
-import Login from './Login';
+import Restaurant from './pages/Restaurant';
+import Home from './pages/Home';
+import Register from './pages/Register';
+import Login from './pages/Login';
 
 
 class Navbar extends Component {

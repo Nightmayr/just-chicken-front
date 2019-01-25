@@ -5,7 +5,7 @@ import {
     Link
 } from 'react-router-dom';
 
-import Show from './Show';
+import Show from './pages/Show';
 
 
 class RestaurantCard extends Component {
