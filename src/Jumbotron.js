@@ -4,7 +4,7 @@ import {
     Route,
     Link
 } from 'react-router-dom';
-import New from './pages/New';
+// import New from './pages/New';
 
 
 class Jumbotron extends Component{
@@ -18,10 +18,10 @@ class Jumbotron extends Component{
                         <p class="lead">View our curated list of fried chicken restaurants.</p>
                         <hr class="my-4"></hr>
                         <p>Don't see your favourite restaurant on the list?</p>
-                        <Link class="btn btn-primary btn-lg" to="new" role="button">Add Restaurant</Link>
+                        <a class="btn btn-primary btn-lg" href="new" role="button">Add Restaurant</a>
                     </div>
                 </div>
-                <Route exact path="/new" component={New} />
+                {/* <Route exact path="/new" component={New} /> */}
 
                 </div>
             </Router>

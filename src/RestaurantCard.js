@@ -14,7 +14,7 @@ class RestaurantCard extends Component {
             <Router>
 
                 <div class="list-of-cards">
-                    <Link to="/restaurant/id">
+                    <a href="/restaurant/id">
                         <div class="card">
                             <img src={require("./logo.png")} class="card-img-top" alt="..." />
                             <div class="card-body">
@@ -23,7 +23,7 @@ class RestaurantCard extends Component {
                                 {/* <a href="/" class="btn btn-primary">MORE INFO</a> */}
                             </div>
                         </div>
-                    </Link>
+                    </a>
                     <div class="card">
                         <img src="" class="card-img-top" alt="..." />
                         <div class="card-body">
@@ -65,7 +65,6 @@ class RestaurantCard extends Component {
                         </div>
                     </div>
 
-                    <Route exact path="/restaurant/id" component={Show} />
                 </div>
             </Router>
         );
