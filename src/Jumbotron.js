@@ -11,6 +11,7 @@ class Jumbotron extends Component{
     render() {
         return (
             <Router>
+                <div>
                 <div class="container" id="jumboContainer">
                     <div class="jumbotron">
                         <h1 class="display-4">Welcome to Just-Chicken</h1>
@@ -19,7 +20,9 @@ class Jumbotron extends Component{
                         <p>Don't see your favourite restaurant on the list?</p>
                         <Link class="btn btn-primary btn-lg" to="new" role="button">Add Restaurant</Link>
                     </div>
-                    <Route exact path="/new" component={New} />
+                </div>
+                <Route exact path="/new" component={New} />
+
                 </div>
             </Router>
         );
