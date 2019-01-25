@@ -33,6 +33,10 @@
   padding-top: 2em; 
 }
 
+.navbar{
+  padding: 0;
+}
+
 /* change the background color */
 .navbar-custom {
   background-color: grey;
@@ -75,6 +79,12 @@ body{
   display: flex;
   /* justify-content: space-around; */
   flex-wrap: wrap;
+}
+
+.card-img-top {
+  width: 10rem;
+  /* height: 15vw; */
+  /* object-fit: cover; */
 }
 
 @keyframes App-logo-spin {
