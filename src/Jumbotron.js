@@ -4,6 +4,8 @@ import {
     Route,
     Link
 } from 'react-router-dom';
+import New from './pages/New';
+
 
 class Jumbotron extends Component{
     render() {
