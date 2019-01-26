@@ -42,7 +42,7 @@ class RestaurantCard extends Component {
         const Restaurants = this.state.restaurant.map((item, i) => (
             <a href="/restaurant/id">
             <div class="card">
-                <img src={require("./"+item.photo)} class="card-img-top" alt="..." />
+                <img src={require(item.photo)} class="card-img-top" alt="..." />
                 <div class="card-body">
                     <h5 class="card-title">{item.name}</h5>
                         <p class="card-text">{item.address}</p>

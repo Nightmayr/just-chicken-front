@@ -12,18 +12,36 @@ class New extends Component {
             comment: "",
             description: ""
         };
-      }
-      
+    }
     
+    restaurantNameChange = (event) => {
+        this.setState({ name: event.target.value });
+    }
+    
+    restaurantAddressChange = (event) => {
+        this.setState({ address: event.target.value });
+    }
+
+    restaurantPhotoChange = (event) => {
+        this.setState({ photo: event.target.value });
+    }
+
+    restaurantCommentChange = (event) => {
+        this.setState({ comment: event.target.value });
+    }
+
+    restaurantDescChange = (event) => {
+        this.setState({ description: event.target.value });
+    }
     
     handleInput = () => {
         axios({
             method: "post",
             url: "http://localhost:8080/just-chicken/api/restaurant/addRestaurant",
             data: {
-                username: this.state.name,
+                name: this.state.name,
                 address: this.state.address,
-                image: this.state.image,
+                photo: this.state.photo,
                 comment: this.state.comment,
                 description: this.state.description
             }
@@ -40,24 +58,24 @@ class New extends Component {
                         <form>
                             <div class="form-group">
                                 <label for="InputName">Restaurant Name</label>
-                                <input type="text" class="form-control" id="inputName" value={this.state.name} placeholder="Enter Name" />
+                                <input type="text" class="form-control" id="inputName" value={this.state.name} placeholder="Enter Name" onChange={this.restaurantNameChange} />
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress">Address</label>
-                                <input type="text" class="form-control" id="inputAddress" value={this.state.address} placeholder="Enter Address" />
+                                <input type="text" class="form-control" id="inputAddress" value={this.state.address} placeholder="Enter Address" onChange={this.restaurantAddressChange}/>
                             </div>
                             <div class="form-group">
-                                <label for="inputPhoto">Image</label>
-                                <input type="text" class="form-control" id="inputPhoto" value={this.state.image} placeholder="Enter Image URL" />
+                                <label for="inputImage">Image</label>
+                                <input type="text" class="form-control" id="inputImage" value={this.state.photo} placeholder="Enter Image URL" onChange={this.restaurantPhotoChange} />
                             </div>
                             {/* Comments will be replaced by join in tables */}
                             <div class="form-group">
                                 <label for="inputComment">Comment</label>
-                                <input type="text" class="form-control" id="inputComment" value={this.state.comment} placeholder="Enter Comment" />
+                                <input type="text" class="form-control" id="inputComment" value={this.state.comment} placeholder="Enter Comment" onChange={this.restaurantCommentChange}/>
                             </div>
                             <div class="form-group">
                                 <label for="inputDescription">Description</label>
-                                <input type="text" class="form-control" id="inputDescription" value={this.state.description} placeholder="Enter Description" />
+                                <input type="text" class="form-control" id="inputDescription" value={this.state.description} placeholder="Enter Description" onChange={this.restaurantDescChange}/>
                             </div>
                             {/* <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1" />
