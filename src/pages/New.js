@@ -14,6 +14,19 @@ class New extends Component {
         };
       }
 
+    handleInput = () => {
+        axios({
+            method: "post",
+            url: "http://localhost:8080/just-chicken/api/restaurant/addRestaurant",
+            data: {
+                username: this.state.name,
+                address: this.state.address,
+                image: this.state.image,
+                comment: this.state.comment,
+                description: this.state.description
+            }
+        });
+    }
 
 
     render() {
@@ -25,24 +38,24 @@ class New extends Component {
                         <form>
                             <div class="form-group">
                                 <label for="InputName">Restaurant Name</label>
-                                <input type="text" class="form-control" id="inputName" aria-describedby="emailHelp" placeholder="Enter Name" />
+                                <input type="text" class="form-control" id="inputName" value={this.state.name} placeholder="Enter Name" />
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress">Address</label>
-                                <input type="text" class="form-control" id="inputAddress" placeholder="Enter Address" />
+                                <input type="text" class="form-control" id="inputAddress" value={this.state.address} placeholder="Enter Address" />
                             </div>
                             <div class="form-group">
                                 <label for="inputPhoto">Image</label>
-                                <input type="text" class="form-control" id="inputPhoto" placeholder="Enter Image URL" />
+                                <input type="text" class="form-control" id="inputPhoto" value={this.state.image} placeholder="Enter Image URL" />
                             </div>
                             {/* Comments will be replaced by join in tables */}
                             <div class="form-group">
                                 <label for="inputComment">Comment</label>
-                                <input type="text" class="form-control" id="inputComment" placeholder="Enter Comment" />
+                                <input type="text" class="form-control" id="inputComment" value={this.state.comment} placeholder="Enter Comment" />
                             </div>
                             <div class="form-group">
                                 <label for="inputDescription">Description</label>
-                                <input type="text" class="form-control" id="inputDescription" placeholder="Enter Description" />
+                                <input type="text" class="form-control" id="inputDescription" value={this.state.description} placeholder="Enter Description" />
                             </div>
                             {/* <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1" />
