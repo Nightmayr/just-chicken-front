@@ -29,24 +29,27 @@ class New extends Component {
                             <div class="form-group">
                                 <label for="InputName">Restaurant Name</label>
                                 <input type="text" class="form-control" id="inputName" aria-describedby="emailHelp" placeholder="Enter Name" />
-                                {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress">Address</label>
-                                <input type="text" class="form-control" id="inputAddress" placeholder="Address" />
+                                <input type="text" class="form-control" id="inputAddress" placeholder="Enter Address" />
                             </div>
                             <div class="form-group">
                                 <label for="inputPhoto">Image</label>
-                                <input type="text" class="form-control" id="inputPhoto" placeholder="Image URL" />
+                                <input type="text" class="form-control" id="inputPhoto" placeholder="Enter Image URL" />
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress">Address</label>
-                                <input type="text" class="form-control" id="inputAddress" placeholder="Address" />
+                                <input type="text" class="form-control" id="inputAddress" placeholder="Enter Address" />
                             </div>
-                            {/* This will be replaced by join in tables */}
+                            {/* Comments will be replaced by join in tables */}
                             <div class="form-group">
-                                <label for="inputAddress">Comment</label>
-                                <input type="text" class="form-control" id="inputAddress" placeholder="Address" />
+                                <label for="inputComment">Comment</label>
+                                <input type="text" class="form-control" id="inputComment" placeholder="Enter Comment" />
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDescription">Description</label>
+                                <input type="text" class="form-control" id="inputDescription" placeholder="Enter Description" />
                             </div>
                             {/* <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1" />
