@@ -1,26 +1,23 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 
 class New extends Component {
+    constructor() {
+        super();
+        this.state = {
+            name: "",
+            address: "",
+            image: "",
+            comment: "",
+            description: ""
+        };
+      }
+
+
+
     render() {
         return (
-            // <div style={{ width: 30 %: margin: 30px auto }}>
-            // <form action="/campgrounds" method="POST">
-            //     <div class="form-group">
-            //         <input class="form-control" type="text" name="name" placeholder="name"/>
-            //     </div>
-            //     <div class="form-group">
-            //         <input class="form-control" type="text" name="image" placeholder="image url"/>                
-            //     </div>
-            //     <div class="form-group">
-            //         <input class="form-control" type="text" name="description" placeholder="description"/>                
-            //     </div>
-            //     <div class="form-group">
-            //         <button class="btn btn-lg btn-primary btn-block">Submit!</button>
-            //     </div>
-            //     </form>
-            //     </div>
-
             <div>
                 <div class="container">
                     <div class="jumbotron">
@@ -37,10 +34,6 @@ class New extends Component {
                             <div class="form-group">
                                 <label for="inputPhoto">Image</label>
                                 <input type="text" class="form-control" id="inputPhoto" placeholder="Enter Image URL" />
-                            </div>
-                            <div class="form-group">
-                                <label for="inputAddress">Address</label>
-                                <input type="text" class="form-control" id="inputAddress" placeholder="Enter Address" />
                             </div>
                             {/* Comments will be replaced by join in tables */}
                             <div class="form-group">
