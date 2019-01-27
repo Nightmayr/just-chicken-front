@@ -35,25 +35,6 @@ class RestaurantCard extends Component {
         });
     }
 
-    // imageCheck() {
-
-    //     for(let i=0; ; step) {
-            
-    //     }
-
-    //     this.state.restaurant.forEach(image => {
-    //         let imgStr = "";
-    //         if (image.indexOf("http") > -1) {
-    //             imgStr = image;
-    //         } else {
-    //             return imgStr = "./" + image;
-    //         }
-            
-    //     });
-    // }
-
-   
-
     render() {
 
         const Restaurants = this.state.restaurant.map((item, i) => (

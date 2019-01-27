@@ -46,8 +46,8 @@ class New extends Component {
                 description: this.state.description
             }
         });
+        this.props.history.push('/restaurant');
     }
-
 
     render() {
         return (
