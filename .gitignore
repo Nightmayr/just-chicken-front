@@ -23,6 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 *.properties
 .scannerwork
+.vscode
 
 # config
 .eslintrc.json

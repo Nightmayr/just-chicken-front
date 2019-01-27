@@ -35,14 +35,35 @@ class RestaurantCard extends Component {
         });
     }
 
+    // imageCheck() {
+
+    //     for(let i=0; ; step) {
+            
+    //     }
+
+    //     this.state.restaurant.forEach(image => {
+    //         let imgStr = "";
+    //         if (image.indexOf("http") > -1) {
+    //             imgStr = image;
+    //         } else {
+    //             return imgStr = "./" + image;
+    //         }
+            
+    //     });
+    // }
+
    
 
     render() {
 
         const Restaurants = this.state.restaurant.map((item, i) => (
             <a href="/restaurant/id">
-            <div class="card">
-                <img src={require("./"+item.photo)} class="card-img-top" alt="..." />
+                <div class="card">
+                    {item.photo.indexOf("http") > -1 ? (
+                        <img src={item.photo} class="card-img-top" alt="..." />
+                    ) : (
+                        <img src={require("./"+item.photo)} class="card-img-top" alt="..." />
+                    )}
                 <div class="card-body">
                     <h5 class="card-title">{item.name}</h5>
                         <p class="card-text">{item.address}</p>
