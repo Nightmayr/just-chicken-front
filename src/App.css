@@ -82,7 +82,8 @@ body{
 }
 
 .card-img-top {
-  width: 30rem;
+  max-width: 30rem;
+  max-height: 100%;
   /* height: 15vw; */
   /* object-fit: cover; */
 }
