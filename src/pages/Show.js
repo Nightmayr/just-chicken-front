@@ -52,7 +52,11 @@ class Show extends Component {
         if (restaurantPhotoName == undefined) {
             var restaurantPhoto = "https://via/placeholder.com/206x300";
         } else {
-            var restaurantPhoto = images('./' + restaurantPhotoName);
+            if (restaurantPhotoName.indexOf("http") > -1) {
+                var restaurantPhoto = restaurantPhotoName;
+            } else {
+                var restaurantPhoto = images('./' + restaurantPhotoName); 
+            }
         }
 
         // var restaurantPhoto = images('./'+restaurantPhotoName)
