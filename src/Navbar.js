@@ -11,6 +11,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import New from './pages/New';
 import Show from './pages/Show';
+import Update from './pages/Update';
 
 
 class Navbar extends Component {
@@ -68,11 +69,12 @@ class Navbar extends Component {
                     </nav>
 
                     <Route exact path="/" component={Home} />
-                    <Route exact path="/restaurant" component={Restaurant} />
                     <Route exact path="/register" component={Register} />
+                    <Route exact path="/restaurant" component={Restaurant} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/new" component={New} />
                     <Route exact path="/restaurant/:id" component={Show} />
+                    <Route exact path="/update/:id" component={Update} />
 
 
                 </div>

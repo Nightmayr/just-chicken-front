@@ -35,9 +35,10 @@ class Update extends Component {
     }
     
     handleInput = () => {
+        console.log(this.state.name);
         axios({
             method: "put",
-            url: "http://localhost:8080/just-chicken/api/restaurant/updateRestaurant"+this.props.match.params.id,
+            url: "http://localhost:8080/just-chicken/api/restaurant/updateRestaurant/" + this.props.match.params.id,
             data: {
                 name: this.state.name,
                 address: this.state.address,
