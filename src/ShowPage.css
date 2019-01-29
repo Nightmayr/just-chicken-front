@@ -30,3 +30,7 @@ img {
     padding: 20px; 
     height: 150px;
   }
+
+  .btn-danger{
+      margin-left :10px; 
+  }

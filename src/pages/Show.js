@@ -42,7 +42,7 @@ class Show extends Component {
         const images = require.context('../', true);
         const restaurantPhotoName = restaurantPhotoN;
         // let photo = "../"+this.state.restaurant.photo;
-        console.log(restaurantPhotoName);
+        // console.log(restaurantPhotoName);
 
         if (restaurantPhotoName == undefined) {
             var restaurantPhoto = "https://via/placeholder.com/206x300";
@@ -73,7 +73,8 @@ class Show extends Component {
                                     <h4 class="pull-right">{this.state.restaurant.name}</h4>
                                     <h4> <a href=""></a> </h4>
                                     <p>{this.state.restaurant.description}</p>
-
+                                    <a class="btn btn-success" href="">Update Restaurant</a>
+                                    <a class="btn btn-danger" href="">Delete Restaurant</a>
                                 </div>
 
                                 <div class="well">
