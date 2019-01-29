@@ -33,7 +33,7 @@ class Show extends Component {
 
 
     // componentDidMount() {
-        
+
     // }
 
 
@@ -75,7 +75,13 @@ class Show extends Component {
                                     <p>{this.state.restaurant.description}</p>
 
                                 </div>
-                            {/* </div> */}
+
+                                <div class="well">
+                                    <div class="text-right">
+                                        <a class="btn btn-success" href=""></a>
+                                    </div>
+                                </div>
+                                {/* </div> */}
                             </div>
                         </div>
                     </div>
