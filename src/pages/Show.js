@@ -55,24 +55,27 @@ class Show extends Component {
         return (
             <div>
                 <div class="container">
-                    <p class="lead">{this.state.restaurant.name}</p>
+                    {/* <p class="lead">{this.state.restaurant.name}</p> */}
                     <div class="row">
                         <div class="col-md-3">
                             <div class="list-group">
-                                <li class="list-group-item">Info 1</li>
+                                <li class="list-group-item">Address: {this.state.restaurant.address}</li>
                                 <li class="list-group-item">Info 1</li>
                                 <li class="list-group-item">Info 1</li>
                             </div>
                         </div>
                         <div class="col-md-9">
+                            {/* <div class="jumbotron"> */}
+
                             <div class="thumbnail">
                                 <img classname="img-thumbnail" src={restaurantPhoto} alt="" />
                                 <div class="caption-full">
-                                    <h4 class="pull-right">Hello</h4>
+                                    <h4 class="pull-right">{this.state.restaurant.name}</h4>
                                     <h4> <a href=""></a> </h4>
                                     <p>{this.state.restaurant.description}</p>
 
                                 </div>
+                            {/* </div> */}
                             </div>
                         </div>
                     </div>
