@@ -35,7 +35,7 @@ class Show extends Component {
             url: "http://localhost:8080/just-chicken/api/restaurant/deleteRestaurant/" + this.props.match.params.id,
             responseType: "json"
         })
-        this.handleBack();
+        window.location.replace('/restaurant');
     }
 
     handleBack = () => {
