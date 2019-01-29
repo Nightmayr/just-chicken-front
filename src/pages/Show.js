@@ -29,6 +29,15 @@ class Show extends Component {
 
     }
 
+    deleteRestaurant = () => {
+        axios({
+            method: "delete",
+            url: "http://localhost:8080/just-chicken/api/restaurant/deleteRestaurant/" + this.props.match.params.id,
+            responseType: "json"
+        })
+        window.location.replace('/restaurant');
+    }
+
     handleBack = () => {
         this.props.history.push('/restaurant');
     }
@@ -85,7 +94,7 @@ class Show extends Component {
                                         <h4> <a href=""></a> </h4>
                                         <p>{this.state.restaurant.description}</p>
                                         <Link className="btn btn-success" to="">Update Restaurant</Link>
-                                        <Link className="btn btn-danger" to="">Delete Restaurant</Link>
+                                        <Link className="btn btn-danger" to="" onClick={this.deleteRestaurant}>Delete Restaurant</Link>
                                     </div>
 
                                     <div className="well">
