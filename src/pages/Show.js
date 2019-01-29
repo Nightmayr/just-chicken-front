@@ -5,7 +5,8 @@ import {
     Route,
     Link
 } from 'react-router-dom';
-import '../ShowPage.css'
+import '../ShowPage.css';
+import logo from '../logo.png';
 
 
 class Show extends Component {
@@ -50,7 +51,7 @@ class Show extends Component {
         // console.log(restaurantPhotoName);
 
         if (restaurantPhotoName == undefined) {
-            var restaurantPhoto = "https://via/placeholder.com/206x300";
+            var restaurantPhoto = {logo};
         } else {
             if (restaurantPhotoName.indexOf("http") > -1) {
                 var restaurantPhoto = restaurantPhotoName;
@@ -64,31 +65,31 @@ class Show extends Component {
         return (
             <Router>
                 <div>
-                    <div class="container">
+                    <div className="container">
                         {/* <p class="lead">{this.state.restaurant.name}</p> */}
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="list-group">
-                                    <li class="list-group-item">Address: {this.state.restaurant.address}</li>
-                                    <li class="list-group-item">Map: </li>
+                        <div className="row">
+                            <div className="col-md-3">
+                                <div className="list-group">
+                                    <li className="list-group-item">Address: {this.state.restaurant.address}</li>
+                                    <li className="list-group-item">Map: </li>
                                     {/* <li class="list-group-item">Info 1</li> */}
                                 </div>
                             </div>
-                            <div class="col-md-9">
+                            <div className="col-md-9">
                                 {/* <div class="jumbotron"> */}
 
                                 <div class="thumbnail">
-                                    <img classname="img-thumbnail" src={restaurantPhoto} alt="" />
-                                    <div class="caption-full">
-                                        <h4 class="pull-right">{this.state.restaurant.name}</h4>
+                                    <img className="img-thumbnail" src={restaurantPhoto} alt={this.state.restaurant.photo} />
+                                    <div className="caption-full">
+                                        <h4 className="pull-right">{this.state.restaurant.name}</h4>
                                         <h4> <a href=""></a> </h4>
                                         <p>{this.state.restaurant.description}</p>
-                                        <Link class="btn btn-success" to="">Update Restaurant</Link>
-                                        <Link class="btn btn-danger" to="">Delete Restaurant</Link>
+                                        <Link className="btn btn-success" to="">Update Restaurant</Link>
+                                        <Link className="btn btn-danger" to="">Delete Restaurant</Link>
                                     </div>
 
-                                    <div class="well">
-                                        <h3 class="pull-right">Comments</h3>
+                                    <div className="well">
+                                        <h3 className="pull-right">Comments</h3>
                                         {/* <div class="text-right"> */}
                                         <div>
                                             <hr></hr>
