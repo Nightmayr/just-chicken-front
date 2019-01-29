@@ -1,0 +1,43 @@
+/* .card-body > h5, .card-body > p {
+    text-decoration: none;
+} */
+
+.list-of-cards > a {
+    text-decoration: none;
+    
+}
+
+.card-img-top:hover {
+    /* filter:brightness(105%) */
+    filter:grayscale(0%)
+}
+
+.card img {
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+  	-moz-transition: all 1s ease; /* Firefox */
+  	-o-transition: all 1s ease; /* IE 9 */
+  	-ms-transition: all 1s ease; /* Opera */
+      transition: all 1s ease;
+      z-index: 1;
+}
+
+.card:hover img {
+    -webkit-transform:scale(1.1); /* Safari and Chrome */
+    -moz-transform:scale(1.1); /* Firefox */
+    -ms-transform:scale(1.1); /* IE 9 */
+    -o-transform:scale(1.1); /* Opera */
+     transform:scale(1.1);
+}
+
+.card {
+    overflow: hidden;
+}
+
+.card-body {
+    overflow: hidden;
+    z-index: 2;
+}
+
+#photoframe {
+    overflow: hidden;
+}
