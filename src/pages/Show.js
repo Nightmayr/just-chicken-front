@@ -43,7 +43,7 @@ class Show extends Component {
     }
 
     handleClick = (item) => {
-        this.props.history.push('/restaurant/' + item.id);
+        this.props.history.push('/restaurant/' + item.id + '/update');
     }
 
 
@@ -93,7 +93,7 @@ class Show extends Component {
                                         <h4 className="pull-right">{this.state.restaurant.name}</h4>
                                         <h4> <a href=""></a> </h4>
                                         <p>{this.state.restaurant.description}</p>
-                                        <Link className="btn btn-success" to="">Update Restaurant</Link>
+                                        <Link className="btn btn-success" to={"/update/"+this.props.match.params.id}>Update Restaurant</Link>
                                         <Link className="btn btn-danger" to="" onClick={this.deleteRestaurant}>Delete Restaurant</Link>
                                     </div>
 
