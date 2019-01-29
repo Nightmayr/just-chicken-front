@@ -72,7 +72,7 @@ class Navbar extends Component {
                     <Route exact path="/register" component={Register} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/new" component={New} />
-                    <Route exact path="/restaurant/id" component={Show} />
+                    <Route exact path="/restaurant/:id" component={Show} />
 
 
                 </div>

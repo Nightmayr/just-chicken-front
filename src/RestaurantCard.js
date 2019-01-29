@@ -38,7 +38,7 @@ class RestaurantCard extends Component {
     render() {
 
         const Restaurants = this.state.restaurant.map((item, i) => (
-            <a href="/restaurant/id">
+            <a href={"restaurant/"+item.id}  >
                 <div class="card">
                     {item.photo.indexOf("http") > -1 ? (
                         <img src={item.photo} class="card-img-top" alt="..." />
@@ -58,8 +58,6 @@ class RestaurantCard extends Component {
             <Router>
                 <div class="list-of-cards">
                     {Restaurants}
-                    
-
                 </div>
             </Router>
         );

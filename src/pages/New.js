@@ -46,6 +46,12 @@ class New extends Component {
                 description: this.state.description
             }
         });
+        window.location.reload();
+        // window.location.replace('/restaurant');
+        this.props.history.push('/restaurant');
+    }
+
+    handleBack = () => {
         this.props.history.push('/restaurant');
     }
 
