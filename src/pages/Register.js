@@ -10,6 +10,7 @@ class Register extends Component{
             username: "",
             email:"",
             password: "",
+            confirmPass: ""
         };
     }
 
@@ -23,6 +24,10 @@ class Register extends Component{
 
     passwordChange = (event) => {
         this.setState({ password: event.target.value });
+    }
+
+    passwordConfirmChange = (event) => {
+        this.setState({ confirmPass: event.target.value });
     }
 
     handleInput = () => {
@@ -49,19 +54,19 @@ class Register extends Component{
                         <form>
                             <div class="form-group">
                                 <label for="InputName">Username</label>
-                                <input type="text" class="form-control" id="inputName" value={this.state.name} placeholder="Enter Name" onChange={this.restaurantNameChange} />
+                                <input type="text" class="form-control" id="inputName" value={this.state.username} placeholder="Enter Username" onChange={this.usernameChange} />
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress">Email</label>
-                                <input type="text" class="form-control" id="inputAddress" value={this.state.address} placeholder="Enter Address" onChange={this.restaurantAddressChange}/>
+                                <input type="text" class="form-control" id="inputAddress" value={this.state.email} placeholder="Enter Email" onChange={this.emailChange}/>
                             </div>
                             <div class="form-group">
                                 <label for="inputImage">Password</label>
-                                <input type="password" class="form-control" id="inputImage" value={this.state.photo} placeholder="Enter Image URL" onChange={this.restaurantPhotoChange} />
+                                <input type="password" class="form-control" id="inputImage" value={this.state.password} placeholder="Enter Password" onChange={this.passwordChange} />
                             </div>
                             <div class="form-group">
                                 <label for="inputImage">Confirm Password</label>
-                                <input type="password" class="form-control" id="inputImage" value={this.state.photo} placeholder="Enter Image URL" onChange={this.restaurantPhotoChange} />
+                                <input type="password" class="form-control" id="inputImage" value={this.state.confirmPass} placeholder="Enter Password" onChange={this.passwordConfirmChange} />
                             </div>
                             <button type="submit" onClick={this.handleInput} class="btn btn-primary">Submit</button>
                         </form>
