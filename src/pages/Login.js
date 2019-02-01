@@ -26,19 +26,46 @@ class Login extends Component{
 
     handleInput = () => {
         if (this.state.username && this.state.email && this.state.password) {
-                axios({
-                    method: "post",
-                    url: "http://localhost:8080/just-chicken/api/user/addUser",
-                    data: {
-                        username: this.state.username,
-                        email: this.state.email,
-                        password: this.state.password,
+            axios({
+                method: "get",
+                url: "http://localhost:8080/just-chicken/api/user/getAllUsers",
+                responseType: "json",
+            }).then(response => {
+                let users = response.data;
+                for (let i = 0; i < users.length; i++) {
+                    if (this.state.username == users[i].username || this.state.email == users[i].email) {
+                        console.log("user found:" + this.state.username);
+                        if (this.state.password == users[i].password) {
+                            console.log("password matched");
+                            window.location.reload();
+                            // window.location.replace('/restaurant');
+                            sessionStorage.setItem("username", this.state.username);
+                            this.props.history.push('/restaurant');
+                        }
+                    } else {
+                        console.log("Login failed");
                     }
-                });
-                window.location.reload();
-                // window.location.replace('/restaurant');
-                this.props.history.push('/restaurant');
+                }
+            });
+                
+                
         }
+    }
+
+    checkValidUser = () => {
+        axios({
+            method: "get",
+            url: "http://localhost:8080/just-chicken/api/user/getAllUsers",
+            responseType: "json",
+        }).then(response => {
+            let users = response.data;
+            for (let i = 0; i < users.length; i++) {
+                if (this.state.username == users[i].username || this.state.email == users[i].email) {
+                    console.log("user found:" + this.state.username)
+                }
+            }
+        });
+
     }
 
     render() {
@@ -54,7 +81,7 @@ class Login extends Component{
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress">Email</label>
-                                <input type="text" class="form-control" id="inputAddress" value={this.state.email} placeholder="Enter Email" onChange={this.emailChange} required/>
+                                <input type="email" class="form-control" id="inputAddress" value={this.state.email} placeholder="Enter Email" onChange={this.emailChange} required/>
                             </div>
                             <div class="form-group">
                                 <label for="inputImage">Password</label>

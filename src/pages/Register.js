@@ -51,19 +51,6 @@ class Register extends Component{
         }
     }
 
-    // checkUsernameAvailability = () => {
-    //     axios({
-    //         method: "get",
-    //         url: "http://localhost:8080/just-chicken/api/user/getAllUsers",
-    //         data: {
-    //             users
-    //         }
-    //     })
-    //     if (condition) {
-            
-    //     }
-    // }
-
 
     render() {
         return (
@@ -78,7 +65,7 @@ class Register extends Component{
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress">Email</label>
-                                <input type="text" class="form-control" id="inputAddress" value={this.state.email} placeholder="Enter Email" onChange={this.emailChange} required/>
+                                <input type="email" class="form-control" id="inputAddress" value={this.state.email} placeholder="Enter Email" onChange={this.emailChange} required/>
                             </div>
                             <div class="form-group">
                                 <label for="inputImage">Password</label>
