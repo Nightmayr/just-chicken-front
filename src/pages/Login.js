@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import axios from 'axios';
 
 class Login extends Component{
     constructor() {
@@ -9,6 +9,36 @@ class Login extends Component{
             email:"",
             password: "",
         };
+    }
+
+    usernameChange = (event) => {
+        this.setState({ username: event.target.value });
+    }
+
+    emailChange = (event) => {
+        this.setState({ email: event.target.value });
+    }
+
+    passwordChange = (event) => {
+        this.setState({ password: event.target.value });
+    }
+
+
+    handleInput = () => {
+        if (this.state.username && this.state.email && this.state.password) {
+                axios({
+                    method: "post",
+                    url: "http://localhost:8080/just-chicken/api/user/addUser",
+                    data: {
+                        username: this.state.username,
+                        email: this.state.email,
+                        password: this.state.password,
+                    }
+                });
+                window.location.reload();
+                // window.location.replace('/restaurant');
+                this.props.history.push('/restaurant');
+        }
     }
 
     render() {
@@ -32,11 +62,8 @@ class Login extends Component{
                             </div>
                             <button type="submit" onClick={this.handleInput} class="btn btn-primary">Submit</button>
                         </form>
-
                     </div>
-
                 </div>
-
             </div>
         );
     }

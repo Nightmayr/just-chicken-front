@@ -10,7 +10,8 @@ class Register extends Component{
             username: "",
             email:"",
             password: "",
-            confirmPass: ""
+            confirmPass: "",
+            users: []
         };
     }
 
@@ -49,6 +50,19 @@ class Register extends Component{
             
         }
     }
+
+    // checkUsernameAvailability = () => {
+    //     axios({
+    //         method: "get",
+    //         url: "http://localhost:8080/just-chicken/api/user/getAllUsers",
+    //         data: {
+    //             users
+    //         }
+    //     })
+    //     if (condition) {
+            
+    //     }
+    // }
 
 
     render() {
