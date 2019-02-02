@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import '../ShowPage.css';
 import logo from '../logo.png';
+import Map from '../Map'
 
 
 class Show extends Component {
@@ -80,7 +81,10 @@ class Show extends Component {
                             <div className="col-md-3">
                                 <div className="list-group">
                                     <li className="list-group-item">Address: {this.state.restaurant.address}</li>
-                                    <li className="list-group-item">Map: </li>
+                                    {/* <li className="list-group-item">Map: </li> */}
+                                    <div id="map-container">
+                                        <Map/>
+                                    </div>
                                     {/* <li class="list-group-item">Info 1</li> */}
                                 </div>
                             </div>
