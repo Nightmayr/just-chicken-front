@@ -39,16 +39,14 @@ class Login extends Component{
                             console.log("password matched");
                             window.location.reload();
                             // window.location.replace('/restaurant');
-                            sessionStorage.setItem("username", this.state.username);
+                            sessionStorage.setItem("user", JSON.stringify(users[i]));
                             this.props.history.push('/restaurant');
                         }
                     } else {
                         console.log("Login failed");
                     }
                 }
-            });
-                
-                
+            }); 
         }
     }
 
