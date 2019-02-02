@@ -16,6 +16,11 @@ import Update from './pages/Update';
 
 class Navbar extends Component {
 
+    handleClick = () => {
+        sessionStorage.clear();
+        window.location.reload();
+    }
+
 
     render() {
         return (
@@ -65,7 +70,10 @@ class Navbar extends Component {
                                         <div>
                                             < ul class="navbar-nav mr-auto" >
                                                 <li class="nav-item">
-                                                    <Link class="nav-link" to="/register">Logout</Link>
+                                                    <Link class="nav-link" to="" >{ JSON.parse(sessionStorage.getItem('user')).username}</Link>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <Link class="nav-link" to="" onClick={this.handleClick}>Logout</Link>
                                                 </li>
                                             </ul>
                                         </div>
