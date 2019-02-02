@@ -15,6 +15,37 @@ import Update from './pages/Update';
 
 
 class Navbar extends Component {
+
+    loggedIn = () => {
+        if (sessionStorage.getItem('user') != null) {
+            return (
+                <div>
+                    < ul class="navbar-nav mr-auto" >
+                        <li class="nav-item">
+                        <Link class="nav-link" to="/login">Login</Link>
+                        </li>
+                    </ul>
+                    < ul class="navbar-nav mr-auto" >
+                        <li class="nav-item">
+                            <Link class="nav-link" to="/register">Register</Link>
+                        </li>
+                    </ul>
+                </div>
+            )
+        }
+                else {
+                    return (
+                        <div>
+                             < ul class="navbar-nav mr-auto" >
+                            <li class="nav-item">
+                                <Link class="nav-link" to="/register">Logout</Link>
+                            </li>
+                        </ul>
+                    </div>
+                    )
+                }
+    }
+
     render() {
         return (
             <Router>
@@ -48,7 +79,8 @@ class Navbar extends Component {
 
                             </ul>
                             <form class="form-inline my-2 my-lg-0">
-                                < ul class="navbar-nav mr-auto" >
+                                {this.loggedIn}
+                                {/* < ul class="navbar-nav mr-auto" >
                                     <li class="nav-item">
                                         <Link class="nav-link" to="/login">Login</Link>
                                     </li>
@@ -57,7 +89,7 @@ class Navbar extends Component {
                                     <li class="nav-item">
                                         <Link class="nav-link" to="/register">Register</Link>
                                     </li>
-                                </ul>
+                                </ul> */}
 
                                 {/* <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
                                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> */}
