@@ -15,6 +15,13 @@ import Update from './pages/Update';
 
 
 class Navbar extends Component {
+
+    handleClick = () => {
+        sessionStorage.clear();
+        window.location.reload();
+    }
+
+
     render() {
         return (
             <Router>
@@ -48,16 +55,29 @@ class Navbar extends Component {
 
                             </ul>
                             <form class="form-inline my-2 my-lg-0">
-                                < ul class="navbar-nav mr-auto" >
-                                    <li class="nav-item">
-                                        <Link class="nav-link" to="/login">Login</Link>
-                                    </li>
-                                </ul>
-                                < ul class="navbar-nav mr-auto" >
-                                    <li class="nav-item">
-                                        <Link class="nav-link" to="/register">Register</Link>
-                                    </li>
-                                </ul>
+                                {sessionStorage.getItem('user') === null ? (
+                                    <div>
+                                        < ul class="navbar-nav mr-auto" >
+                                            <li class="nav-item">
+                                                <Link class="nav-link" to="/login">Login</Link>
+                                            </li>
+                                            <li class="nav-item">
+                                                <Link class="nav-link" to="/register">Register</Link>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                ) : (   
+                                        <div>
+                                            < ul class="navbar-nav mr-auto" >
+                                                <li class="nav-item">
+                                                    <Link class="nav-link" to="" >{ JSON.parse(sessionStorage.getItem('user')).username}</Link>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <Link class="nav-link" to="" onClick={this.handleClick}>Logout</Link>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    )}
 
                                 {/* <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
                                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> */}
