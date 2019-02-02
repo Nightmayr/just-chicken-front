@@ -51,12 +51,12 @@ class Show extends Component {
         // console.log(restaurantPhotoName);
 
         if (restaurantPhotoName == undefined) {
-            var restaurantPhoto = {logo};
+            var restaurantPhoto = { logo };
         } else {
             if (restaurantPhotoName.indexOf("http") > -1) {
                 var restaurantPhoto = restaurantPhotoName;
             } else {
-                var restaurantPhoto = images('./' + restaurantPhotoName); 
+                var restaurantPhoto = images('./' + restaurantPhotoName);
             }
         }
 
@@ -78,7 +78,7 @@ class Show extends Component {
                             <div className="col-md-9">
                                 {/* <div class="jumbotron"> */}
 
-                                <div class="thumbnail">
+                                {/* <div class="thumbnail">
                                     <img className="img-thumbnail" src={restaurantPhoto} alt={this.state.restaurant.photo} />
                                     <div className="caption-full">
                                         <h4 className="pull-right">{this.state.restaurant.name}</h4>
@@ -86,25 +86,35 @@ class Show extends Component {
                                         <p>{this.state.restaurant.description}</p>
                                         <Link className="btn btn-success" to="">Update Restaurant</Link>
                                         <Link className="btn btn-danger" to="">Delete Restaurant</Link>
-                                    </div>
+                                    </div> */}
 
-                                    <div className="well">
-                                        <h3 className="pull-right">Comments</h3>
-                                        {/* <div class="text-right"> */}
-                                        <div>
-                                            <hr></hr>
-                                            <p>{this.state.restaurant.comment}</p>
-                                            {/* <a class="btn btn-success" href="">New Comment</a> */}
-                                            <div></div>
-                                        </div>
+                                <div class="card" >
+                                    <img class="card-img-top" src={restaurantPhoto} alt={this.state.restaurant.photo} />
+                                    <div class="card-body">
+                                        <h5 class="card-title">{this.state.restaurant.name}</h5>
+                                        <p class="card-text">{this.state.restaurant.description}</p>
+                                        <Link className="btn btn-success" to="">Update Restaurant</Link>
+                                        <Link className="btn btn-danger" to="">Delete Restaurant</Link>
                                     </div>
-                                    {/* </div> */}
                                 </div>
+
+                                <div className="well">
+                                    <h3 className="pull-right">Comments</h3>
+                                    {/* <div class="text-right"> */}
+                                    <div>
+                                        <hr></hr>
+                                        <p>{this.state.restaurant.comment}</p>
+                                        {/* <a class="btn btn-success" href="">New Comment</a> */}
+                                        <div></div>
+                                    </div>
+                                </div>
+                                {/* </div> */}
                             </div>
                         </div>
                     </div>
                 </div>
-            </Router>
+         
+            </Router >
 
         );
     }

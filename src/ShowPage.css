@@ -37,3 +37,12 @@ img {
   .btn-danger{
       margin-left :10px; 
   }
+
+  .card {
+      width: 100%;
+  }
+
+  .card-img-top{
+      max-width: 100%;
+
+  }
