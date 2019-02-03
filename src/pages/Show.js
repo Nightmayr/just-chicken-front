@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import '../ShowPage.css';
 import logo from '../logo.png';
+import Map from '../Map'
 
 
 class Show extends Component {
@@ -81,21 +82,24 @@ class Show extends Component {
                                 <div className="list-group">
                                     <li className="list-group-item">Address: {this.state.restaurant.address}</li>
                                     <li className="list-group-item">Map: </li>
+                                    {/* <div id="map-container">
+                                        <Map/>
+                                    </div> */}
                                     {/* <li class="list-group-item">Info 1</li> */}
                                 </div>
                             </div>
                             <div className="col-md-9">
                                 {/* <div class="jumbotron"> */}
 
-                                <div class="thumbnail">
-                                    <img className="img-thumbnail" src={restaurantPhoto} alt={this.state.restaurant.photo} />
-                                    <div className="caption-full">
-                                        <h4 className="pull-right">{this.state.restaurant.name}</h4>
-                                        {/* <h4> <a href=""></a> </h4> */}
-                                        <p>{this.state.restaurant.description}</p>
-                                        <a className="btn btn-success" href={"/update/"+this.props.match.params.id}>Update Restaurant</a>
-                                        <Link className="btn btn-danger" to="" onClick={this.deleteRestaurant}>Delete Restaurant</Link>
+                                <div id="show-card" class="card" >
+                                    <img id="show-card-img" class="card-img-top" src={restaurantPhoto} alt={this.state.restaurant.photo} />
+                                    <div class="card-body">
+                                        <h5 class="card-title">{this.state.restaurant.name}</h5>
+                                        <p class="card-text">{this.state.restaurant.description}</p>
+                                        <Link className="btn btn-success" to="">Update Restaurant</Link>
+                                        <Link className="btn btn-danger" to="">Delete Restaurant</Link>
                                     </div>
+                                </div>
 
                                     <div className="well">
                                         <h3 className="pull-right">Comments</h3>
@@ -112,7 +116,6 @@ class Show extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
             </Router>
 
         );
