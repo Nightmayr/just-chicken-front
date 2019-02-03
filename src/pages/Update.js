@@ -9,7 +9,7 @@ class Update extends Component {
             name: "",
             address: "",
             image: "",
-            comment: "",
+            comments: "",
             description: ""
         };
     }
@@ -36,6 +36,27 @@ class Update extends Component {
     
     handleInput = () => {
         console.log(this.state.name);
+
+        axios({
+            method: "get",
+            url: "http://localhost:8080/just-chicken/api/restaurant/getRestaurant/" + this.props.match.params.id,
+            responseType: "json"
+        }).then(response => {
+            // axios({
+            //     method: "put",
+            //     url: "http://localhost:8080/just-chicken/api/restaurant/updateRestaurant/" + this.props.match.params.id,
+            //     data: {
+            //         name: this.state.name,
+            //         address: this.state.address,
+            //         photo: this.state.photo,
+            //         comments: response.data.comment,
+            //         description: this.state.description
+            //     }
+            // });
+            console.log(response.data);
+            console.log(response.data.comment);
+        });
+
         axios({
             method: "put",
             url: "http://localhost:8080/just-chicken/api/restaurant/updateRestaurant/" + this.props.match.params.id,
@@ -43,7 +64,7 @@ class Update extends Component {
                 name: this.state.name,
                 address: this.state.address,
                 photo: this.state.photo,
-                comment: this.state.comment,
+                comments: this.state.comments,
                 description: this.state.description
             }
         });
@@ -76,10 +97,6 @@ class Update extends Component {
                                 <input type="text" class="form-control" id="inputImage" value={this.state.photo} placeholder="Enter Image URL" onChange={this.restaurantPhotoChange} />
                             </div>
                             {/* Comments will be replaced by join in tables */}
-                            <div class="form-group">
-                                <label for="inputComment">Comment</label>
-                                <input type="text" class="form-control" id="inputComment" value={this.state.comment} placeholder="Enter Comment" onChange={this.restaurantCommentChange}/>
-                            </div>
                             <div class="form-group">
                                 <label for="inputDescription">Description</label>
                                 <input type="text" class="form-control" id="inputDescription" value={this.state.description} placeholder="Enter Description" onChange={this.restaurantDescChange}/>
