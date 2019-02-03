@@ -15,7 +15,8 @@ class Show extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            restaurant: ""
+            restaurant: [],
+            comments: []
         };
 
         axios({
@@ -23,8 +24,12 @@ class Show extends Component {
             url: "http://localhost:8080/just-chicken/api/restaurant/getRestaurant/" + this.props.match.params.id,
             responseType: "json"
         }).then(response => {
-            this.setState({ restaurant: response.data });
-            console.log(response.data.photo);
+            this.setState({
+                restaurant: response.data,
+                comments: response.data.comment
+            });
+            console.log(response.data);
+            console.log(response.data.comment);
         });
 
 
@@ -60,17 +65,24 @@ class Show extends Component {
         // let photo = "../"+this.state.restaurant.photo;
         // console.log(restaurantPhotoName);
 
-        if (restaurantPhotoName == undefined) {
-            var restaurantPhoto = {logo};
+        if (restaurantPhotoName === undefined) {
+            var restaurantPhoto = { logo };
         } else {
             if (restaurantPhotoName.indexOf("http") > -1) {
                 var restaurantPhoto = restaurantPhotoName;
             } else {
-                var restaurantPhoto = images('./' + restaurantPhotoName); 
+                var restaurantPhoto = images('./' + restaurantPhotoName);
             }
         }
 
-        // var restaurantPhoto = images('./'+restaurantPhotoName)
+
+        const Comments = this.state.comments.map((item, i) => (
+            <div>
+                <strong>{item.author}</strong>
+                <p>{item.comment}</p>
+                <hr id="comment-separator"/>
+            </div>
+        ));
 
         return (
             <Router>
@@ -96,18 +108,20 @@ class Show extends Component {
                                     <div class="card-body">
                                         <h5 class="card-title">{this.state.restaurant.name}</h5>
                                         <p class="card-text">{this.state.restaurant.description}</p>
-                                        <Link className="btn btn-success" to="">Update Restaurant</Link>
-                                        <Link className="btn btn-danger" to="">Delete Restaurant</Link>
+                                        <a className="btn btn-success" href={"/update/"+this.props.match.params.id}>Update Restaurant</a>
+                                        <Link className="btn btn-danger" to="" onClick={this.deleteRestaurant}>Delete Restaurant</Link>
                                     </div>
                                 </div>
 
                                     <div className="well">
-                                        <h3 className="pull-right">Comments</h3>
                                         {/* <div class="text-right"> */}
-                                        <div>
+                                        <h3 id="comment-title" className="pull-right">Comments</h3>
+                                        <span id="new-comment-btn" >
+                                            <a className="btn btn-success" href={"/newcomment/"+this.props.match.params.id}>New Comment</a>
+                                        </span>
+                                        <div id="comment-list">
                                             <hr></hr>
-                                            <p>{this.state.restaurant.comment}</p>
-                                            {/* <a class="btn btn-success" href="">New Comment</a> */}
+                                            {Comments}
                                             <div></div>
                                         </div>
                                     </div>
