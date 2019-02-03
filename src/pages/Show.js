@@ -94,9 +94,9 @@ class Show extends Component {
                                 <div className="list-group">
                                     <li className="list-group-item">Address: {this.state.restaurant.address}</li>
                                     <li className="list-group-item">Map: </li>
-                                    {/* <div id="map-container">
+                                    <div id="map-container">
                                         <Map/>
-                                    </div> */}
+                                    </div>
                                     {/* <li class="list-group-item">Info 1</li> */}
                                 </div>
                             </div>
