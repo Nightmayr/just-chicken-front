@@ -95,6 +95,7 @@ class Navbar extends Component {
                     <Route exact path="/new" component={New} />
                     <Route exact path="/restaurant/:id" component={Show} />
                     <Route exact path="/update/:id" component={Update} />
+                    <Route exact path="/newcomment/:id" component={NewComment}/>
 
 
                 </div>
