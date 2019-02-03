@@ -78,8 +78,9 @@ class Show extends Component {
 
         const Comments = this.state.comments.map((item, i) => (
             <div>
-                <p>{item.author}</p>
+                <strong>{item.author}</strong>
                 <p>{item.comment}</p>
+                <hr id="comment-separator"/>
             </div>
         ));
 
@@ -113,10 +114,12 @@ class Show extends Component {
                                 </div>
 
                                     <div className="well">
-                                        <h3 className="pull-right">Comments</h3>
                                         {/* <div class="text-right"> */}
-                                        <div>
-                                        <a className="btn btn-success" href={"/newcomment/"+this.props.match.params.id}>New Comment</a>
+                                        <h3 id="comment-title" className="pull-right">Comments</h3>
+                                        <span id="new-comment-btn" >
+                                            <a className="btn btn-success" href={"/newcomment/"+this.props.match.params.id}>New Comment</a>
+                                        </span>
+                                        <div id="comment-list">
                                             <hr></hr>
                                             {Comments}
                                             <div></div>

@@ -31,7 +31,6 @@ img {
     background-position: left top;
     background-repeat: repeat;
     padding: 20px; 
-    height: 150px;
   }
 
   .btn-danger{
@@ -49,4 +48,16 @@ img {
   #show-card:hover img {
     -webkit-transform: scale(1,1);
     transform: scale(1,1);
+  }
+
+  #new-comment-btn{
+      float: right;
+  }
+
+  #comment-title{
+      float: left;
+  }
+
+  #comment-list{
+      margin-top: 60px;
   }
