@@ -37,3 +37,16 @@ img {
   .btn-danger{
       margin-left :10px; 
   }
+
+  #show-card-img{
+    max-width: 100%;
+  }
+
+  #show-card{
+      width: 100%;
+  }
+
+  #show-card:hover img {
+    -webkit-transform: scale(1,1);
+    transform: scale(1,1);
+  }
