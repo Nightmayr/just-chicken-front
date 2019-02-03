@@ -116,7 +116,7 @@ class Show extends Component {
                                         <h3 className="pull-right">Comments</h3>
                                         {/* <div class="text-right"> */}
                                         <div>
-                                        <Link className="btn btn-success" href="">New Comment</Link>
+                                        <a className="btn btn-success" href={"/newcomment/"+this.props.match.params.id}>New Comment</a>
                                             <hr></hr>
                                             {Comments}
                                             <div></div>

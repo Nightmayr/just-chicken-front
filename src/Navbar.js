@@ -12,6 +12,7 @@ import Login from './pages/Login';
 import New from './pages/New';
 import Show from './pages/Show';
 import Update from './pages/Update';
+import NewComment from './pages/NewComment';
 
 
 class Navbar extends Component {
