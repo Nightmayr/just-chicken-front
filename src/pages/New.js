@@ -9,7 +9,7 @@ class New extends Component {
             name: "",
             address: "",
             image: "",
-            comment: "",
+            comments: [],
             description: ""
         };
     }
@@ -24,10 +24,6 @@ class New extends Component {
 
     restaurantPhotoChange = (event) => {
         this.setState({ photo: event.target.value });
-    }
-
-    restaurantCommentChange = (event) => {
-        this.setState({ comment: event.target.value });
     }
 
     restaurantDescChange = (event) => {
@@ -76,17 +72,9 @@ class New extends Component {
                             </div>
                             {/* Comments will be replaced by join in tables */}
                             <div class="form-group">
-                                <label for="inputComment">Comment</label>
-                                <input type="text" class="form-control" id="inputComment" value={this.state.comment} placeholder="Enter Comment" onChange={this.restaurantCommentChange}/>
-                            </div>
-                            <div class="form-group">
                                 <label for="inputDescription">Description</label>
                                 <input type="text" class="form-control" id="inputDescription" value={this.state.description} placeholder="Enter Description" onChange={this.restaurantDescChange}/>
                             </div>
-                            {/* <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                            </div> */}
                             <button type="submit" onClick={this.handleInput} class="btn btn-primary">Submit</button>
                         </form>
 

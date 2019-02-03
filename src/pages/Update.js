@@ -26,10 +26,6 @@ class Update extends Component {
         this.setState({ photo: event.target.value });
     }
 
-    restaurantCommentChange = (event) => {
-        this.setState({ comment: event.target.value });
-    }
-
     restaurantDescChange = (event) => {
         this.setState({ description: event.target.value });
     }
