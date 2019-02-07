@@ -33,9 +33,9 @@ class Login extends Component{
             }).then(response => {
                 let users = response.data;
                 for (let i = 0; i < users.length; i++) {
-                    if (this.state.username == users[i].username || this.state.email == users[i].email) {
+                    if (this.state.username === users[i].username || this.state.email === users[i].email) {
                         console.log("user found:" + this.state.username);
-                        if (this.state.password == users[i].password) {
+                        if (this.state.password === users[i].password) {
                             console.log("password matched");
                             window.location.reload();
                             // window.location.replace('/restaurant');
