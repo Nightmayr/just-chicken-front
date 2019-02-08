@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-const location = "http://localhost:8080";
+import * as constants from "../Constants.js"
+
 
 class Update extends Component {
     constructor(props) {
@@ -36,7 +37,7 @@ class Update extends Component {
 
         axios({
             method: "get",
-            url: location+"/just-chicken/api/restaurant/getRestaurant/" + this.props.match.params.id,
+            url: constants.externalIP+":8080/just-chicken/api/restaurant/getRestaurant/" + this.props.match.params.id,
             responseType: "json"
         }).then(response => {
             // axios({
@@ -56,7 +57,7 @@ class Update extends Component {
 
         axios({
             method: "put",
-            url: location+"/just-chicken/api/restaurant/updateRestaurant/" + this.props.match.params.id,
+            url: constants.externalIP+":8080/just-chicken/api/restaurant/updateRestaurant/" + this.props.match.params.id,
             data: {
                 name: this.state.name,
                 address: this.state.address,

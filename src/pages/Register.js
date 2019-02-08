@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
-const location = "http://localhost:8080";
+import * as constants from "../Constants.js"
 
 class Register extends Component {
 
@@ -38,7 +37,7 @@ class Register extends Component {
             if (this.state.password === this.state.confirmPass) {
                 axios({
                     method: "post",
-                    url: location+"/just-chicken/api/user/addUser",
+                    url: constants.externalIP+"/just-chicken/api/user/addUser",
                     data: {
                         username: this.state.username,
                         email: this.state.email,
