@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 
-class Register extends Component{
+class Register extends Component {
 
     constructor() {
         super();
         this.state = {
             username: "",
-            email:"",
+            email: "",
             password: "",
             confirmPass: "",
-            users: []
+            users: [],
+            checker: ""
         };
     }
 
@@ -33,7 +34,7 @@ class Register extends Component{
 
     handleInput = () => {
         if (this.state.username && this.state.email && this.state.password && this.state.confirmPass) {
-            if (this.state.password == this.state.confirmPass) {
+            if (this.state.password === this.state.confirmPass) {
                 axios({
                     method: "post",
                     url: "http://localhost:8080/just-chicken/api/user/addUser",
@@ -42,12 +43,26 @@ class Register extends Component{
                         email: this.state.email,
                         password: this.state.password,
                     }
+                }).then(response => {
+                    console.log("hi");
+                    console.log(response);
+                    if (typeof response.data == "string") {
+                        this.setState({ checker: response.data })
+                    } else {
+                        this.setState({ checker: "Account created successfully" })
+                        setTimeout(() => {
+                            window.location.reload();
+                            // window.location.replace('/restaurant');
+                            this.props.history.push('/restaurant');
+                        }, 2000);
+                    }
+                }).catch(error => {
+                    console.log("bi");
+                    console.log(error)
                 });
-                window.location.reload();
-                // window.location.replace('/restaurant');
-                this.props.history.push('/restaurant');
+
             }
-            
+
         }
     }
 
@@ -61,21 +76,22 @@ class Register extends Component{
                         <form>
                             <div class="form-group">
                                 <label for="InputName">Username</label>
-                                <input type="text" class="form-control" id="inputName" value={this.state.username} placeholder="Enter Username" onChange={this.usernameChange} required/>
+                                <input type="text" class="form-control" id="inputName" value={this.state.username} placeholder="Enter Username" onChange={this.usernameChange} required />
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress">Email</label>
-                                <input type="email" class="form-control" id="inputAddress" value={this.state.email} placeholder="Enter Email" onChange={this.emailChange} required/>
+                                <input type="email" class="form-control" id="inputAddress" value={this.state.email} placeholder="Enter Email" onChange={this.emailChange} required />
                             </div>
                             <div class="form-group">
                                 <label for="inputImage">Password</label>
-                                <input type="password" class="form-control" id="inputImage" value={this.state.password} placeholder="Enter Password" onChange={this.passwordChange} required/>
+                                <input type="password" class="form-control" id="inputImage" value={this.state.password} placeholder="Enter Password" onChange={this.passwordChange} required />
                             </div>
                             <div class="form-group">
                                 <label for="inputImage">Confirm Password</label>
-                                <input type="password" class="form-control" id="inputImage" value={this.state.confirmPass} placeholder="Enter Password" onChange={this.passwordConfirmChange} required/>
+                                <input type="password" class="form-control" id="inputImage" value={this.state.confirmPass} placeholder="Enter Password" onChange={this.passwordConfirmChange} required />
                             </div>
-                            <button type="submit" onClick={this.handleInput} class="btn btn-primary">Submit</button>
+                            <p>{this.state.checker}</p>
+                            <input onClick={this.handleInput} class="btn btn-primary" value="Submit" />
                         </form>
 
                     </div>
