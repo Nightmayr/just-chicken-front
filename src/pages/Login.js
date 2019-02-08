@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+const location = "http://localhost:8080";
+
 class Login extends Component{
     constructor() {
         super();
@@ -28,7 +30,7 @@ class Login extends Component{
         if (this.state.username && this.state.email && this.state.password) {
             axios({
                 method: "get",
-                url: "http://localhost:8080/just-chicken/api/user/getAllUsers",
+                url: location+"/just-chicken/api/user/getAllUsers",
                 responseType: "json",
             }).then(response => {
                 let users = response.data;
@@ -53,7 +55,7 @@ class Login extends Component{
     checkValidUser = () => {
         axios({
             method: "get",
-            url: "http://localhost:8080/just-chicken/api/user/getAllUsers",
+            url: location+"/just-chicken/api/user/getAllUsers",
             responseType: "json",
         }).then(response => {
             let users = response.data;

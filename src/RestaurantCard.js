@@ -7,6 +7,7 @@ import {
 import axios from 'axios';
 import Show from './pages/Show';
 
+const location = "http://localhost:8080";
 
 
 class RestaurantCard extends Component {
@@ -27,7 +28,7 @@ class RestaurantCard extends Component {
     componentDidMount() {
         axios({
             method: "get",
-            url: "http://localhost:8080/just-chicken/api/restaurant/getAllRestaurants",
+            url: location+"/just-chicken/api/restaurant/getAllRestaurants",
             responseType: "json"
         }).then(response => {
             this.setState({ restaurant: response.data });

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+const location = "http://localhost:8080";
 
 class Update extends Component {
     constructor(props) {
@@ -35,7 +36,7 @@ class Update extends Component {
 
         axios({
             method: "get",
-            url: "http://localhost:8080/just-chicken/api/restaurant/getRestaurant/" + this.props.match.params.id,
+            url: location+"/just-chicken/api/restaurant/getRestaurant/" + this.props.match.params.id,
             responseType: "json"
         }).then(response => {
             // axios({
@@ -55,7 +56,7 @@ class Update extends Component {
 
         axios({
             method: "put",
-            url: "http://localhost:8080/just-chicken/api/restaurant/updateRestaurant/" + this.props.match.params.id,
+            url: location+"/just-chicken/api/restaurant/updateRestaurant/" + this.props.match.params.id,
             data: {
                 name: this.state.name,
                 address: this.state.address,

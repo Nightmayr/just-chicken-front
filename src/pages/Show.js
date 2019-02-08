@@ -9,6 +9,7 @@ import '../ShowPage.css';
 import logo from '../logo.png';
 import Map from '../Map'
 
+const location = "http://localhost:8080";
 
 class Show extends Component {
 
@@ -21,7 +22,7 @@ class Show extends Component {
 
         axios({
             method: "get",
-            url: "http://localhost:8080/just-chicken/api/restaurant/getRestaurant/" + this.props.match.params.id,
+            url: location+"/just-chicken/api/restaurant/getRestaurant/" + this.props.match.params.id,
             responseType: "json"
         }).then(response => {
             this.setState({
@@ -38,7 +39,7 @@ class Show extends Component {
     deleteRestaurant = () => {
         axios({
             method: "delete",
-            url: "http://localhost:8080/just-chicken/api/restaurant/deleteRestaurant/" + this.props.match.params.id,
+            url: location+"/just-chicken/api/restaurant/deleteRestaurant/" + this.props.match.params.id,
             responseType: "json"
         })
         window.location.replace('/restaurant');

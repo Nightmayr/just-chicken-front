@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+const location = "http://localhost:8080";
 
 class New extends Component {
     constructor() {
@@ -33,7 +34,7 @@ class New extends Component {
     handleInput = () => {
         axios({
             method: "post",
-            url: "http://localhost:8080/just-chicken/api/restaurant/addRestaurant",
+            url: location+"/just-chicken/api/restaurant/addRestaurant",
             data: {
                 name: this.state.name,
                 address: this.state.address,

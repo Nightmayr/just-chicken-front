@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+const location = "http://localhost:8080";
+
 class NewComment extends Component{
     constructor() {
         super();
@@ -18,7 +20,7 @@ class NewComment extends Component{
 
             axios({
                     method: "post",
-                    url: "http://localhost:8080/just-chicken/api/comment/addComment",
+                    url: location+"/just-chicken/api/comment/addComment",
                     data: {
                         userId: JSON.parse(sessionStorage.getItem('user')).id,
                         restaurantId: this.props.match.params.id,

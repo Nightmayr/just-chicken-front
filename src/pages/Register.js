@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+const location = "http://localhost:8080";
 
 class Register extends Component {
 
@@ -37,7 +38,7 @@ class Register extends Component {
             if (this.state.password === this.state.confirmPass) {
                 axios({
                     method: "post",
-                    url: "http://localhost:8080/just-chicken/api/user/addUser",
+                    url: location+"/just-chicken/api/user/addUser",
                     data: {
                         username: this.state.username,
                         email: this.state.email,

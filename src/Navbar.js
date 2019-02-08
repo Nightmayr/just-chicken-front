@@ -20,7 +20,9 @@ class Navbar extends Component {
     handleClick = () => {
         sessionStorage.clear();
         window.location.reload();
+        window.location.replace('/restaurant');
     }
+
 
 
     render() {
