@@ -58,7 +58,7 @@ class Login extends Component{
         }).then(response => {
             let users = response.data;
             for (let i = 0; i < users.length; i++) {
-                if (this.state.username == users[i].username || this.state.email == users[i].email) {
+                if (this.state.username === users[i].username || this.state.email === users[i].email) {
                     console.log("user found:" + this.state.username)
                 }
             }
