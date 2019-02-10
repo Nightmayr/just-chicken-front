@@ -27,7 +27,7 @@ class RestaurantCard extends Component {
     componentDidMount() {
         axios({
             method: "get",
-            url: constants.externalIP+":8080/just-chicken/api/restaurant/getAllRestaurants",
+            url: constants.externalIP+"/just-chicken/api/restaurant/getAllRestaurants",
             responseType: "json"
         }).then(response => {
             this.setState({ restaurant: response.data });

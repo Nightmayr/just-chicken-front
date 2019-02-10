@@ -20,7 +20,7 @@ class NewComment extends Component{
 
             axios({
                     method: "post",
-                    url: constants.externalIP+":8080/just-chicken/api/comment/addComment",
+                    url: constants.externalIP+"/just-chicken/api/comment/addComment",
                     data: {
                         userId: JSON.parse(sessionStorage.getItem('user')).id,
                         restaurantId: this.props.match.params.id,

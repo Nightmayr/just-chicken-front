@@ -37,7 +37,7 @@ class Update extends Component {
 
         axios({
             method: "get",
-            url: constants.externalIP+":8080/just-chicken/api/restaurant/getRestaurant/" + this.props.match.params.id,
+            url: constants.externalIP+"/just-chicken/api/restaurant/getRestaurant/" + this.props.match.params.id,
             responseType: "json"
         }).then(response => {
             // axios({
@@ -57,7 +57,7 @@ class Update extends Component {
 
         axios({
             method: "put",
-            url: constants.externalIP+":8080/just-chicken/api/restaurant/updateRestaurant/" + this.props.match.params.id,
+            url: constants.externalIP+"/just-chicken/api/restaurant/updateRestaurant/" + this.props.match.params.id,
             data: {
                 name: this.state.name,
                 address: this.state.address,

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import * as constants from "../Constants.js"
 
-const location = "http://localhost:8080";
 
 class Login extends Component{
     constructor() {
@@ -27,12 +27,12 @@ class Login extends Component{
 
 
     handleInput = () => {
-        if (this.state.username && this.state.email && this.state.password) {
             axios({
                 method: "get",
-                url: location+"/just-chicken/api/user/getAllUsers",
-                responseType: "json",
+                url: constants.externalIP+"/just-chicken/api/user/getAllUsers"
+                // url: "http://35.246.53.17:8081/just-chicken/api/user/getAllUsers"
             }).then(response => {
+                console.log(response);
                 let users = response.data;
                 for (let i = 0; i < users.length; i++) {
                     if (this.state.username === users[i].username || this.state.email === users[i].email) {
@@ -43,30 +43,34 @@ class Login extends Component{
                             // window.location.replace('/restaurant');
                             sessionStorage.setItem("user", JSON.stringify(users[i]));
                             this.props.history.push('/restaurant');
+                            break;
                         }
                     } else {
                         console.log("Login failed");
                     }
                 }
-            }); 
-        }
-    }
-
-    checkValidUser = () => {
-        axios({
-            method: "get",
-            url: location+"/just-chicken/api/user/getAllUsers",
-            responseType: "json",
-        }).then(response => {
-            let users = response.data;
-            for (let i = 0; i < users.length; i++) {
-                if (this.state.username === users[i].username || this.state.email === users[i].email) {
-                    console.log("user found:" + this.state.username)
-                }
+            }).catch(error => {
+                console.log(error);
             }
-        });
-
+            ); 
+        
     }
+
+    // checkValidUser = () => {
+    //     axios({
+    //         method: "get",
+    //         url: constants.externalIP+"/just-chicken/api/user/getAllUsers",
+    //         responseType: "json",
+    //     }).then(response => {
+    //         let users = response.data;
+    //         for (let i = 0; i < users.length; i++) {
+    //             if (this.state.username === users[i].username || this.state.email === users[i].email) {
+    //                 console.log("user found:" + this.state.username)
+    //             }
+    //         }
+    //     });
+
+    // }
 
     render() {
         return (

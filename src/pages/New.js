@@ -34,7 +34,7 @@ class New extends Component {
     handleInput = () => {
         axios({
             method: "post",
-            url: constants.externalIP + ":8080/just-chicken/api/restaurant/addRestaurant",
+            url: constants.externalIP + "/just-chicken/api/restaurant/addRestaurant",
             data: {
                 name: this.state.name,
                 address: this.state.address,
