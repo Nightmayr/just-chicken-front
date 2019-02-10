@@ -8,8 +8,11 @@ import {
 import '../ShowPage.css';
 import logo from '../logo.png';
 import Map from '../Map'
+import * as constants from "../Constants.js"
 
-const location = "http://localhost:8080";
+
+// const location = "http://localhost:8080";
+const location = "http://35.246.53.17";
 
 class Show extends Component {
 
@@ -22,7 +25,7 @@ class Show extends Component {
 
         axios({
             method: "get",
-            url: location+"/just-chicken/api/restaurant/getRestaurant/" + this.props.match.params.id,
+            url: constants.externalIP+"/just-chicken/api/restaurant/getRestaurant/" + this.props.match.params.id,
             responseType: "json"
         }).then(response => {
             this.setState({
@@ -39,7 +42,7 @@ class Show extends Component {
     deleteRestaurant = () => {
         axios({
             method: "delete",
-            url: location+"/just-chicken/api/restaurant/deleteRestaurant/" + this.props.match.params.id,
+            url: constants.externalIP+"/just-chicken/api/restaurant/deleteRestaurant/" + this.props.match.params.id,
             responseType: "json"
         })
         window.location.replace('/restaurant');

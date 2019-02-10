@@ -6,8 +6,7 @@ import {
 } from 'react-router-dom';
 import axios from 'axios';
 import Show from './pages/Show';
-
-const location = "http://localhost:8080";
+import * as constants from "./Constants.js"
 
 
 class RestaurantCard extends Component {
@@ -28,7 +27,7 @@ class RestaurantCard extends Component {
     componentDidMount() {
         axios({
             method: "get",
-            url: location+"/just-chicken/api/restaurant/getAllRestaurants",
+            url: constants.externalIP+"/just-chicken/api/restaurant/getAllRestaurants",
             responseType: "json"
         }).then(response => {
             this.setState({ restaurant: response.data });
